@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/main.js" type="module" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class=" flex-1 flex-row bg-blue-950">
+    <main class=" flex-1  w-full h-screen flex flex-row " >
+        <div class="flex flex-1 bg-contain bg-no-repeat bg-start w-6/12 h-full pl-10 " style="background-image: url(./img/bg-login.png);">
+            <img class="object-center w-3/5 pl-20" src="./img/Logo 1.svg" alt="logo acme filmes; câmera de gravação" >
+        </div>
+        <div class="flex flex-col items-center justify-evenly flex-1 w-7/12 h-full">
+            <h1>Bem vindo</h1>
+            <div class="flex flex-col items-center bg-blue-400 w-2/3 h-2/5">
+                <img class="object-center w-20" src="./img/Group.svg" alt="">
+                <form class="flex flex-col h-full w-8/12" action="">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password">
+                </form>
+                <span>Esqueci a senha</span>
+                <button type="submit">Entrar    </button>
+            </div>
+            <div >
+                <p>Não tem conta ainda?</p>
+                <h2>CADASTRE-SE</h2>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
