@@ -4,28 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lalezar&display=swap" rel="stylesheet">
     <script src="./js/main.js" type="module" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Entrar</title>
 </head>
 
-<body class=" flex-1 flex-row bg-blue-950">
+<body class=" flex-1 flex-row bg-blue-950" style="font-family: Kanit;">
     <main class=" flex-1  w-full h-screen flex flex-row " >
-        <div class="flex flex-1 bg-contain bg-no-repeat bg-start w-6/12 h-full pl-10 " style="background-image: url(./img/bg-login.png);">
+        <div class="flex flex-1 bg-contain bg-no-repeat bg-start w-2/6 h-full pl-10 " style="background-image: url(./img/bg-login.svg); background-size: cover;">
             <img class="object-center w-3/5 pl-20" src="./img/Logo 1.svg" alt="logo acme filmes; câmera de gravação" >
         </div>
-        <div class="flex flex-col items-center justify-evenly flex-1 w-7/12 h-full">
-            <h1>Bem vindo</h1>
-            <div class="flex flex-col items-center bg-blue-400 w-2/3 h-2/5">
-                <img class="object-center w-20" src="./img/Group.svg" alt="">
+        <div class="flex flex-col items-center justify-evenly flex-1 w-7/12 h-full text-white">
+            <h1 class="text-6xl" style="font-family: lalezar;">Bem vindo</h1>
+            <div class="flex flex-col items-center bg-sky-700 w-2/3 h-3/6 rounded-lg">
+                <img class="object-center w-14 pt-4" src="./img/Group.svg" alt="">
                 <form class="flex flex-col h-full w-8/12" action="">
                     <label for="email">E-mail</label>
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" class="h-12" required style="background-color: transparent; border-bottom: 2px solid white; outline: none;">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" class="h-12" required style="background-color: transparent; border-bottom: 2px solid white; outline: none;">
                 </form>
-                <span>Esqueci a senha</span>
-                <button type="submit">Entrar    </button>
+                <span class="justify-self-end">Esqueci a senha</span>
+                <button type="submit"><a href="./html/home.html">Entrar</a></button>
             </div>
             <div >
                 <p>Não tem conta ainda?</p>
