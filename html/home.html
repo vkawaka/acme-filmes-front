@@ -15,12 +15,14 @@
     <main class="h-screen w-full flex flex-row">
         <div class="h-screen w-1/5 bg-sky-800" id="left-part"></div>
     <div class="h-screen w-4/5 flex flex-col gap-8 mt-8" id="infos" >
-        <header class="flex justify-evenly">
-            <img src="../img/Logo 1.svg" alt="" class="w-96">
+        <header class="flex justify-evenly h-16">
+            <img src="../img/Logo 1.svg" alt="" class="w-1/2">
             <img src="../img/Group.svg" alt="" >
         </header>
-        Filmes
-        <div id="filmes" class="flex gap-8"></div>
+        <div class="flex flex-col w-full mt-8" style="::-webkit-scrollbar-button{ display: none;}">
+            Filmes
+            <div id="filmes" class="flex w-full overflow-auto shrink-0 gap-2" ></div>
+        </div>
     </div>
     </main>
     

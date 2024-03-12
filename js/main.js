@@ -13,7 +13,7 @@ function criarCard(filme){
     // texto.textContent = filme.sinopse
     const foto = document.createElement('img')
     foto.src = filme.foto_capa
-    foto.classList.add('w-44', 'h-60')
+    foto.classList.add('w-44', 'h-60', 'ml-4')
 
     card.append(foto)
 
@@ -25,13 +25,12 @@ async function preencherContainer(){
 
     const filmes = await getFilmes()
 
-    for (let index = 0; index < 4; index++) {
+    
         filmes.forEach(filme => {
             const card = criarCard(filme)
             container.appendChild(card)
             console.log(card)
         })
-    }
 }
 
 
