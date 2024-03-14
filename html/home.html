@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
@@ -17,12 +17,74 @@
 </head>
 <body class="bg-blue-950 h-screen w-screen overflow-x-hidden">
     <main>
+        <nav class="absolute w-full h-36 z-10 flex items-center text-blue-600">
+            <div class="logo h-24 w-40">
+                <img src="../img/Logo 1.svg" alt="" class="w-full h-full object-contain">
+            </div>
+            <div class="menu my-5 text-2xl">
+                <i class="ri-bar-chart-horizontal-line"></i>
+            </div>
+            <div class="categorias flex">
+                <p>Categorias</p>
+                <i class="ri-arrow-down-s-fill"></i>
+            </div>
+            <button class="size-2xl text-blue-600 border-none outline-none mr-8"><i class="ri-search-line"></i></button>
+        </nav>
     <div class="h-screen w-screen flex flex-col dad" id="infos" >       
         <div class="flex flex-col h-full w-full relative  swiper main-slider" id="main-slider">
             <div id="filmes" class="flex flex-row swiper-wrapper"></div>
         </div>
+        <div class="swiper-button-next"><i class="ri-arrow-right-s-fill"></i></div>
+        <div class="swiper-button-prev"><i class="ri-arrow-left-s-fill"></i></div>
     </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var slider = new Swiper(".main-slider",{
+            SpaceBetween: 1000,
+            initialSLide: 1,
+            navigation:{
+                nextEl: ".swiper-button-next",
+                prevEL: ".swiper-button-prev",
+            },
+            effect: "coverflow",
+            speed: 2000,
+            coverflowEffect:{
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+        });
+    </script>
+
 </body>
 </html>
+
+<style>
+    .teste{
+        z-index: -1;
+    }
+    .teste img{
+        transform: scale(1.2);
+    }
+    .swiper-button-next::after, .swiper-button-prev::after{
+    display: none;
+}
+
+.swiper-button-next,.swiper-button-prev{
+    color: #fff;
+    font-size: 100px;
+}
+
+.swiper-button-prev{
+    left: 40px;
+}
+
+.swiper-button-next{
+    right: 40px;
+}
+
+</style>
