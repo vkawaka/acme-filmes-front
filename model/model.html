@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Spidey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+        integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <nav>
+            <div class="logo">
+                <img src="images/white-logo-spiderman.png" alt="">
+            </div>
+            <div class="menu">
+                <i class="ri-bar-chart-horizontal-line"></i>
+            </div>
+            <div class="flag">
+                <img src="images/flag.png" alt="">
+                <i class="ri-arrow-down-s-fill"></i>
+                <div class="current">
+                    <span>ENG</span>
+                </div>
+            </div>
+            <button><i class="ri-search-line"></i></button>
+        </nav>
+        <div class="container">
+            <div class="swiper thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="number">01</div>
+                        <img src="images/spiderman-mask.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="number">02</div>
+                        <img src="images/spiderman-handjpg.png" />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="number">03</div>
+                        <img src="images/spiderman-helmet.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="swiper main-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background: #3281c2;">
+                        <img src="images/spiderman-mask.png" style=" transform: scale(1.5);" />
+                        <div class="text">
+                            <h2>SPIDER</h2>
+                            <h2>MAN</h2>
+                            <p>SUPERHERO</p>
+                        </div>
+                        <div class="spider">
+                            <img src="images/pink-logo-spiderman.png" alt=""
+                                style="filter: invert(8%) sepia(55%) saturate(2056%) hue-rotate(196deg) brightness(95%) contrast(106%);">
+                        </div>
+                    </div>
+                    <div class="swiper-slide intro">
+                        <img class="hand" src="images/spiderman-handjpg.png" />
+                        <div class="text">
+                            <h2>SPIDER</h2>
+                            <h2>MAN</h2>
+                            <p>SUPERHERO</p>
+                        </div>
+                        <div class="spider">
+                            <img src="images/pink-logo-spiderman.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background: #3281c2;">
+                        <img src="images/spiderman-helmet.png" style=" transform: scale(1.2);" />
+                        <div class="text">
+                            <h2>SPIDER</h2>
+                            <h2>MAN</h2>
+                            <p>SUPERHERO</p>
+                        </div>
+                        <div class="spider">
+                            <img src="images/pink-logo-spiderman.png" alt=""
+                                style="filter: invert(8%) sepia(55%) saturate(2056%) hue-rotate(196deg) brightness(95%) contrast(106%);">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-fill"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-fill"></i></div>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="">FB</a>
+            <a href="">YT</a>
+            <a href="">TW</a>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var thumbs = new Swiper(".thumbs", {
+            centeredSlidesBounds: true,
+            slidesPerView: 2,
+            direction: 'horizontal',
+            watchOverflow: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            spaceBetween: 20,
+            speed: 1200,
+        });
+        var slider = new Swiper(".main-slider", {
+            spaceBetween: 1000,
+            initialSlide: 1,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            effect: "coverflow",
+            speed: 2000,
+            thumbs: {
+                swiper: thumbs,
+            },
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+        });
+
+
+        gsap.from(".intro .spider img", {
+            scale: 0,
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.5,
+        })
+        gsap.from(".intro .hand", {
+            y: 1000,
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.5,
+        })
+        gsap.from(".intro h2", {
+            y: 10,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            delay: 1,
+        })
+        gsap.from(".thumbs .swiper-slide", {
+            x: 1000,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            delay: 1,
+        })
+
+    </script>
+</body>
+
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: "Exo 2", sans-serif;
+}
+
+.main-slider{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #C54542;
+    position: relative;
+}
+
+.main-slider .swiper-slide{
+    width: 100%;
+    height: 100%;
+    background: none;
+    position: relative;
+}
+
+.main-slider .swiper-slide img{
+    position: absolute;
+    bottom: 0;
+    right: 30%;
+    height: 85vh;
+    object-fit: contain;
+}
+
+.text{
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+}
+
+.text h2{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 0.9;
+    color: #fff;
+}
+
+.text p{
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.spider{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    bottom: -15%;
+    right: -39%;
+}
+
+.spider img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(2.5);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+    display: none;
+}
+
+.swiper-button-next,.swiper-button-prev{
+    color: #fff;
+    font-size: 100px;
+}
+
+.swiper-button-prev{
+    left: 40px;
+}
+
+.swiper-button-next{
+    right: 40px;
+}
+
+nav{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    z-index: 10;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+nav .logo{
+    height: 100px;
+    width: 100px;
+}
+
+nav .logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+nav .flag img{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+}
+
+.menu{
+    margin: 0 50px;
+    font-size: 20px;
+}
+
+.flag{
+    margin-left: auto;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+nav button{
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    background: none;
+    margin-right: 40px;
+}
+
+.container{
+    position: relative;
+}
+
+.thumbs{
+    height: 30%;
+    width: 20%;
+    position: absolute;
+    z-index: 100;
+    bottom: 8%;
+    right: 20px;
+    z-index: 100;
+    padding: 20px;
+    padding-left: 0;
+    border-bottom: 1px solid #000;
+}
+
+.thumbs .swiper-slide{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #266598;
+}
+
+.thumbs .swiper-slide:nth-child(2){
+    background: #832e2c;
+}
+
+.thumbs img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.thumbs .number{
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    top: -20px;
+    left: 35%;
+    font-size: 30px;
+    font-weight: 800;
+    z-index: 100;
+    opacity: 0.7;
+}
+
+.socials{
+    position: absolute;
+    bottom: 10%;
+    z-index: 100;
+    left: 20%;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+}
+
+.socials a{
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    background: #ffffff0f;
+}
+</style>

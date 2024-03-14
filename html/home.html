@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="../js/main.js" type="module" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style-home.css">
     <title>Welcome!</title>
 </head>
-<body class="bg-blue-950 h-screen w-full flex flex-row">
-    <main class="h-screen w-full flex flex-row">
-        <div class="h-screen w-1/5 bg-sky-800" id="left-part"></div>
-    <div class="h-screen w-4/5 flex flex-col gap-8 mt-8" id="infos" >
-        <header class="flex justify-evenly h-16">
-            <img src="../img/Logo 1.svg" alt="" class="w-1/2">
-            <img src="../img/Group.svg" alt="" >
-        </header>
-        <div class="flex flex-col w-full mt-8" style="::-webkit-scrollbar-button{ display: none;}">
-            Filmes
-            <div id="filmes" class="flex w-full overflow-auto shrink-0 gap-2" ></div>
+<body class="bg-blue-950 h-screen w-screen overflow-x-hidden">
+    <main>
+    <div class="h-screen w-screen flex flex-col dad" id="infos" >       
+        <div class="flex flex-col h-full w-full relative  swiper main-slider" id="main-slider">
+            <div id="filmes" class="flex flex-row swiper-wrapper"></div>
         </div>
     </div>
     </main>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -1,21 +1,20 @@
 'use strict'
 
-import { getFilmes, getFilme } from "./filmes.js"
-
-console.table(await getFilmes())
-// console.table(await getFilme(1))
+import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
 
 function criarCard(filme){
     const card = document.createElement('div')
-    // const titulo = document.createElement('h2')
-    // titulo.textContent = filme.nome 
-    // const texto = document.createElement('textarea')
-    // texto.textContent = filme.sinopse
+    card.classList.add('swiper-slide', 'w-full', 'h-full', 'relative')
     const foto = document.createElement('img')
     foto.src = filme.foto_capa
-    foto.classList.add('w-44', 'h-60', 'ml-4')
+    foto.classList.add('absolute', 'bottom-0', 'right-1/3', 'h-3/4', 'object-contain')
+    const texto = document.createElement('div')
+    texto.classList.add('absolute', 'left-1/4', 'bottom-1/3')
+    const titulo = document.createElement('h2')
+    titulo.textContent = filme.nome
 
-    card.append(foto)
+    texto.append(titulo)
+    card.append(foto, texto)
 
     return card
 }
@@ -25,12 +24,17 @@ async function preencherContainer(){
 
     const filmes = await getFilmes()
 
-    
-        filmes.forEach(filme => {
-            const card = criarCard(filme)
-            container.appendChild(card)
-            console.log(card)
-        })
+    for (let index = 0; index < 1; index++) {
+        const filme = filmes[index];
+        const card = criarCard(filme)
+        container.appendChild(card)
+        console.log(card)
+    }
+        // filmes.forEach(filme => {
+        //     const card = criarCard(filme)
+        //     container.appendChild(card)
+        //     console.log(card)
+        // })
 }
 
 
