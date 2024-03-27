@@ -6,9 +6,24 @@
     <!-- <script src="../js/main.js" type="module" defer></script> -->
     <script src="../js/teste.js" type="module" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Assista ao filme</title>
 </head>
 <body>
-    <div class="teste-filme" id="filmeInfos"></div>
+    <main class="bg-blue-950 h-screen w-screen">
+        <nav class="fixed top-0 left-0 right-0 w-full h-36 z-10 flex items-center text-blue-600">
+            <div class="logo h-24 w-40">
+                <img src="../img/Logo 1.svg" alt="" class="w-full h-full object-contain">
+            </div>
+            <div class="menu my-5 text-2xl">
+                <i class="ri-bar-chart-horizontal-line"></i>
+            </div>
+            <div class="categorias flex">
+                <p>Categorias</p>
+                <i class="ri-arrow-down-s-fill"></i>
+            </div>
+            <button class="size-2xl text-blue-600 border-none outline-none mr-8"><i class="ri-search-line"></i></button>
+        </nav>
+        <div id="filmeInfos"></div>
+    </main>
 </body>
 </html>

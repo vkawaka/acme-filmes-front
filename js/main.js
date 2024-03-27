@@ -17,7 +17,7 @@ function criarScreenIntro(filme){
     const teste = document.createElement('div')
     teste.classList.add('absolute', 'h-screen', 'w-screen', 'teste', 'my-4')
     const testeImg = document.createElement('img')
-    testeImg.src = 'https://64.media.tumblr.com/727b844f39d474abe19e9f069b264010/f407b66291395e60-06/s540x810/b4db08d7fce5694d75a3cf28b9a3ae14989e56c5.gif'
+    testeImg.src = filme.midia_fundo
     testeImg.classList.add('h-full', 'w-full', 'object-cover')
 
     teste.append(testeImg)
@@ -38,7 +38,8 @@ function criarScreen(filme){
     console.log(filme.id)
 
     fotoBtn.addEventListener('click', function() {
-        chamarInfosFilme(filme.id)
+        location.href = '../html/filme.html'
+        localStorage.setItem('id', filme.id)
     })
 
   
@@ -52,7 +53,7 @@ async function preencherContainer(){
 
     const filmes = await getFilmes()
 
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 5; index++) {
         const filme = filmes[index];
         const card = criarScreenIntro(filme)
         container.appendChild(card)
@@ -67,10 +68,6 @@ async function preencherTela(){
         const card = criarScreen(element)
         container.appendChild(card)
     })
-}
-async function chamarInfosFilme(id){
-        location.href = '../html/filme.html'
-        localStorage.setItem('id', id)
 }
 
 
