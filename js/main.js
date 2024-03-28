@@ -1,7 +1,6 @@
 'use strict'
 
 import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
-import { infosFilme } from "./teste.js"
 
 function criarScreenIntro(filme){
     const card = document.createElement('div')
@@ -18,7 +17,7 @@ function criarScreenIntro(filme){
     teste.classList.add('absolute', 'h-screen', 'w-screen', 'teste', 'my-4')
     const testeImg = document.createElement('img')
     testeImg.src = filme.midia_fundo
-    testeImg.classList.add('h-full', 'w-full', 'object-cover')
+    testeImg.classList.add('h-full', 'w-full', 'object-cover', 'opacity-70')
 
     teste.append(testeImg)
     texto.append(titulo)
