@@ -1,23 +1,23 @@
 'use strict'
 
-import { getFilmes, getFilme, postFilme, deleteFilme } from "./filmes.js"
+import { getFilmes, getFilme} from "./filmes.js"
 
 function criarScreenIntro(filme){
     const card = document.createElement('div')
-    card.classList.add('swiper-slide', 'intro', 'w-full', 'h-full', 'relative')
+    card.classList.add('swiper-slide', 'intro', 'w-full', 'h-full', 'relative', 'pt-[200px]')
     const foto = document.createElement('img')
     foto.src = filme.foto_capa
-    foto.classList.add('absolute', 'bottom-0', 'right-1/3', 'h-3/4', 'object-contain')
+    foto.classList.add('absolute', 'bottom-0', 'left-2/3', 'h-3/4', 'object-contain', 'flex', 'ml-20')
     const texto = document.createElement('div')
     texto.classList.add('absolute', 'left-1/4', 'bottom-1/3')
     const titulo = document.createElement('h2')
     titulo.textContent = filme.nome
     titulo.classList.add('text-6xl', 'font-extrabold', 'text-white')
     const teste = document.createElement('div')
-    teste.classList.add('absolute', 'h-screen', 'w-screen', 'teste', 'my-4')
+    teste.classList.add('absolute', 'h-3/6', 'w-3/6', 'teste', 'mt-[20px]')
     const testeImg = document.createElement('img')
     testeImg.src = filme.midia_fundo
-    testeImg.classList.add('h-full', 'w-full', 'object-cover', 'opacity-70')
+    testeImg.classList.add('h-full', 'w-full', 'object-cover', 'opacity-70', 'flex')
 
     teste.append(testeImg)
     texto.append(titulo)
